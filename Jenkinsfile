@@ -7,7 +7,7 @@ pipeline {
         slackSend(
           teamDomain: "concordia-dkx2971",
           token:"UVm9cSlZCH4ikhzSLq3yun8w",
-          channel:"#jenkins".
+          channel:"#jenkins",
           color: "red",
           message: "Build done!"
         )
