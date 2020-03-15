@@ -4,7 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         bat 'mvn clean'
-        slackSend(teamDomain: 'concordia-dkx2971', token: 'UVm9cSlZCH4ikhzSLq3yun8w', channel: '#jenkins', color: 'good', message: 'Build ${env.BUILD_NUMBER} started.')
+        slackSend(teamDomain: 'concordia-dkx2971', token: 'UVm9cSlZCH4ikhzSLq3yun8w', channel: '#jenkins', color: 'good', message: 'Build started.')
       }
       post {
         success {
