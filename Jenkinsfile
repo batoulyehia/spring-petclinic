@@ -25,6 +25,7 @@ pipeline {
       }
       steps {
         bat 'mvn deploy'
+        echo 'Deploying on master!'
       }
     }
 
