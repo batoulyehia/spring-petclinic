@@ -8,7 +8,7 @@ pipeline {
         }
 
         failure {
-          slackSend(teamDomain: 'concordia-dkx2971', token: 'UVm9cSlZCH4ikhzSLq3yun8w', channel: '#jenkins', color: 'red', message: 'Build Failed!')
+          slackSend(teamDomain: 'concordia-dkx2971', token: 'UVm9cSlZCH4ikhzSLq3yun8w', channel: '#jenkins', color: 'danger', message: 'Build Failed!')
         }
 
       }
