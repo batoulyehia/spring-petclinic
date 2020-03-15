@@ -6,5 +6,10 @@ pipeline {
                 bat './mvnw package' 
             }
         }
+        stage('Test') { 
+            steps { 
+                mvn clean test
+            }
+        }
     }
 }
