@@ -4,7 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         bat 'mvn clean'
-        slackSend(username: 'SlackBot', tokenCredentialId: 'UVm9cSlZCH4ikhzSLq3yun8w', teamDomain: 'concordia-dkx2971', channel: 'jenkins', color: 'black', failOnError: true, message: 'Build Done')
+        slackSend(username: 'JenkinsBot', tokenCredentialId: 'UVm9cSlZCH4ikhzSLq3yun8w', teamDomain: 'concordia-dkx2971', channel: 'jenkins', color: 'black', failOnError: true, message: 'Build Done', attachments: 'Build', blocks: 'Block', botUser: true, notifyCommitters: true, replyBroadcast: true, sendAsText: true, token: 'UVm9cSlZCH4ikhzSLq3yun8w')
       }
     }
 
