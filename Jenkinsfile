@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Test') { 
             steps { 
-                mvn clean test
+                echo 'test'
             }
         }
     }
