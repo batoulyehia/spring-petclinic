@@ -2,10 +2,6 @@ pipeline {
   agent any
   stages {
     stage('Build') {
-      steps {
-        bat 'mvn clean'
-        slackSend(teamDomain: 'concordia-dkx2971', token: 'UVm9cSlZCH4ikhzSLq3yun8w', channel: '#jenkins', color: 'good', message: "Build ${env.BUILD_NUMBER} started.")
-      }
       post {
         success {
           slackSend(teamDomain: 'concordia-dkx2971', token: 'UVm9cSlZCH4ikhzSLq3yun8w', channel: '#jenkins', color: 'good', message: 'Build Successful!')
@@ -14,6 +10,11 @@ pipeline {
         failure {
           slackSend(teamDomain: 'concordia-dkx2971', token: 'UVm9cSlZCH4ikhzSLq3yun8w', channel: '#jenkins', color: 'danger', message: 'Build Failed!')
         }
+
+      }
+      steps {
+        bat 'mvn clean'
+        slackSend(teamDomain: 'concordia-dkx2971', token: 'UVm9cSlZCH4ikhzSLq3yun8w', channel: '#jenkins', color: 'good', message: "Build ${env.BUILD_NUMBER} started.")
       }
     }
 
